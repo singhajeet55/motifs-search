@@ -1,0 +1,35 @@
+import re
+
+
+
+
+def protin(motif):
+    print("seq=",motif)
+    seq=["protin"]
+    for i in seq:
+        pattern1 = re.findall('C.{2,4}C.{8}[LIVMFYWC].{8}H.{3,5}H',motif)
+        pattern2 = re.findall('^.........C',motif)
+        pattern3 = re.findall('C.{2,3}C.{5}[MFYWC].{3}H',motif)
+        pattern4=re.findall('C.{2,4}.{3}[YWC].{8}H',motif)
+        pattern5=re.findall('C..{8}H.{3,5}H',motif)
+        
+        print("no of matches found are:",len(i)-1)
+        
+        
+        for m in pattern1:
+            print('the motif found is =>',m)
+        for i in pattern2: 
+            print('the motif found is =>',i)
+        for k in pattern3:
+            print('the motif found is =>',k)
+        for l in pattern4:
+            print('the motif found is =>',l)
+            
+        for a in pattern5:
+            print('the motif found is =>',a)       
+            break
+
+       
+       
+mystr = (protin("fdgdfsdfrCxmC[LIVMFYWC]fHxffdgHxfddfHfdgfdgfdgdCxmC[MFYWC]dgHfcxmCxm[YWC]fHxffdgHfCerfHxffdgHxfddfH"))
+
